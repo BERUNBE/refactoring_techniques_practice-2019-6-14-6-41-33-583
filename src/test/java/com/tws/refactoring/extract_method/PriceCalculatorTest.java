@@ -18,7 +18,7 @@ public class PriceCalculatorTest {
         double totalPrice = priceCalculator.getPrice(quantity, itemPrice);
 
         //base price - discount + shipping cost
-        assertEquals((quantity * itemPrice) - discount + 5, totalPrice);
+        assertEquals((quantity * itemPrice) - discount + shippingCost, totalPrice);
     }
 
     @Test
