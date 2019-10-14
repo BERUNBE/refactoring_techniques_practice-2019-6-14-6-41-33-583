@@ -10,7 +10,7 @@ public class PriceCalculator {
     }
 
     private double getDiscount(int quantity, int itemPrice) {
-        if (quantity - 500 > 0) {
+        if (quantity > 500) {
             return (quantity - 500) * itemPrice * 0.05;
         } else {
             return 0;
