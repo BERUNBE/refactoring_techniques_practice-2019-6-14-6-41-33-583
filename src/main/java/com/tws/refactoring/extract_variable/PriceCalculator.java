@@ -4,7 +4,7 @@ public class PriceCalculator {
 
     public double getPrice(int quantity, int itemPrice) {
         double discount = getDiscount(quantity, itemPrice);
-        double shippingCost = Math.min(quantity * itemPrice * 0.1, 100.0);
+        double shippingCost = getShippingCost(quantity, itemPrice);
 
         return quantity * itemPrice - discount + shippingCost;
     }
@@ -15,6 +15,11 @@ public class PriceCalculator {
         } else {
             return 0;
         }
+    }
+
+    private double getShippingCost(int quantity, int itemPrice) {
+        double shippingCostThreshold = quantity * itemPrice * 0.1;
+        return Math.min(shippingCostThreshold, 100.0);
     }
 
 }
